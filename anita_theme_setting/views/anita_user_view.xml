@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="anita_user_tree" model="ir.ui.view">
+        <field name="name">res.user.tree</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[last()]" position="after">
+                <field name="current_theme_mode"/>
+                <field name="current_theme_style"/>
+                <button name="theme_setting" class="btn btn-primary" type="object" string="Theme Setting"/>
+                <button name="edit_user_theme" class="btn btn-secondary" type="object" string="Edit Theme"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="anita_user_theme_setting_form" model="ir.ui.view">
+        <field name="name">Anita Theme Setting</field>
+        <field name="model">res.users</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="current_theme_mode" options="{'no_open': True, 'no_create_edit': True, 'no_create':True, 'domain_model': 'res.users', 'domain_method': 'get_mode_domain'}"/>
+                            <field name="current_theme_style" attrs="{'invisible': [('current_theme_mode', '=', False)]}" options="{'no_create_edit': True,'no_open': True, 'no_create':True}"/>
+                            <field name="login_style"/>
+                            <field name="dialog_pop_style"/>
+                            <field name="button_style"/>
+                            <field name="table_style"/>
+                            <field name="form_control_style"/>
+                            <field name="tab_style"/>
+                            <field name="input_style"/>
+                            <field name="font_name"/>
+                            <field name="rtl_mode"/>
+                            <field name="allow_debug"/>
+                            <field name="menu_icon_policy"/>
+                            <field name="dialog_pop_style"/>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button class="btn btn-primary" special="save_and_return" text="save" />
+                    <button class="btn btn-secondary" text="cancel" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="anita_view_user_pop_form" model="ir.ui.view">
+        <field name="name">res.users.form.inherit.awesome_theme</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <footer>
+                    <button class="btn btn-primary" special="save_and_return" text="save" />
+                    <button class="btn btn-secondary" text="cancel" special="cancel" />
+                </footer>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

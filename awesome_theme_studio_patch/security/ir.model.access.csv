@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_awesome_theme_studio_patch_awesome_theme_studio_patch,awesome_theme_studio_patch.awesome_theme_studio_patch,model_awesome_theme_studio_patch_awesome_theme_studio_patch,base.group_user,1,1,1,1

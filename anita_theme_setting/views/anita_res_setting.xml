@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="anita_res_config_settings_form" model="ir.ui.view">
+            <field name="name">Theme Settings</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="-1"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//div[hasclass('settings')]" position="inside">
+                    <div class="app_settings_block" data-string="anita_theme_setting" string="Theme Settings" data-key="anita_theme_setting" groups="base.group_system">
+
+                        <h2>Theme settings</h2>
+
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <div class="content-group">
+                                        <label for="theme_setting_mode" class="o_form_label"/>
+                                        <div class="text-muted">
+                                            Theme Setting Mode
+                                        </div>
+                                        <div class="mt16">
+                                            <field name="theme_setting_mode"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt16 o_settings_container" attrs="{'invisible': [('theme_setting_mode', '!=', 'system')]}">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <div class="content-group">
+                                        <label for="current_theme_mode" class="o_form_label"/>
+                                        <div class="text-muted">
+                                            Theme Mode
+                                        </div>
+                                        <div class="mt16">
+                                            <field name="current_theme_mode" options="{'no_open': True, 'no_create_edit': True}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 o_setting_box" attrs="{'invisible': [('theme_setting_mode', '=', 'system'),
+                                 ('current_theme_mode', '=', False)]}">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <div class="content-group">
+                                        <label for="current_theme_style" class="o_form_label"/>
+                                        <div class="text-muted">
+                                            Theme Style
+                                        </div>
+                                        <div class="mt16">
+                                            <field name="current_theme_style" options="{'no_open': True, 'no_create_edit': True}" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt16 o_settings_container" attrs="{'invisible': [('theme_setting_mode', '!=', 'system')]}">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <div class="content-group">
+                                        <label for="layout_mode" class="o_form_label"/>
+                                        <div class="text-muted">
+                                            layout mode
+                                        </div>
+                                        <div class="mt16">
+                                            <field name="layout_mode" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt16 o_settings_container" attrs="{'invisible': [('theme_setting_mode', '!=', 'system')]}">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <div class="content-group">
+                                        <label for="button_style" class="o_form_label"/>
+                                        <div class="text-muted">
+                                            Select A Button Style
+                                        </div>
+                                        <div class="mt16">
+                                            <field name="button_style" widget="radio"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 o_setting_box" attrs="{'invisible': [('theme_setting_mode', '!=', 'system')]}">
+                                <div class="o_setting_left_pane">
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <div class="content-group">
+                                        <label for="dialog_pop_style" class="o_form_label"/>
+                                        <div class="text-muted">
+                                            Select Dialog Pop Animation
+                                        </div>
+                                        <div class="mt16">
+                                            <field name="dialog_pop_style" widget="radio"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt16 o_settings_container" attrs="{'invisible': [('theme_setting_mode', '!=', 'system')]}">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <div class="content-group">
+                                        <label for="table_style" class="o_form_label"/>
+                                        <div class="text-muted">
+                                            Login Style
+                                        </div>
+                                        <div class="mt16">
+                                            <field name="login_style"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box" attrs="{'invisible': [('theme_setting_mode', '=', 'system'),
+                                 ('current_theme_mode', '=', False)]}">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <div class="content-group">
+                                        <label for="tab_style" class="o_form_label"/>
+                                        <div class="text-muted">
+                                            Tab Style
+                                        </div>
+                                        <div class="mt16">
+                                            <field name="tab_style" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt16 o_settings_container" attrs="{'invisible': [('theme_setting_mode', '!=', 'system')]}">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <div class="content-group">
+                                        <label for="table_style" class="o_form_label"/>
+                                        <div class="text-muted">
+                                            Select Table Style
+                                        </div>
+                                        <div class="mt16">
+                                            <field name="table_style"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box" attrs="{'invisible': [('theme_setting_mode', '!=', 'system')]}">
+                                <div class="o_setting_left_pane">
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <div class="content-group">
+                                        <label for="input_style" class="o_form_label"/>
+                                        <div class="text-muted">
+                                            Input Style
+                                        </div>
+                                        <div class="mt16">
+                                            <field name="input_style" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- font name and show app name -->
+                        <div class="row mt16 o_settings_container" attrs="{'invisible': [('theme_setting_mode', '!=', 'system')]}">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <div class="content-group">
+                                        <label for="font_name" class="o_form_label"/>
+                                        <div class="text-muted">
+                                            Select Font Name
+                                        </div>
+                                        <div class="mt16">
+                                            <field name="font_name"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- rtl mode and favorite_mode -->
+                        <div class="row mt16 o_settings_container" attrs="{'invisible': [('theme_setting_mode', '!=', 'system')]}">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <div class="content-group">
+                                        <label for="rtl_mode" class="o_form_label"/>
+                                        <div class="text-muted">
+                                            RTL Mode
+                                        </div>
+                                        <div class="mt16">
+                                            <field name="rtl_mode"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box" attrs="{'invisible': [('theme_setting_mode', '!=', 'system')]}">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <div class="content-group">
+                                        <label for="form_control_style" class="o_form_label"/>
+                                        <div class="text-muted">
+                                                Form Control Style
+                                        </div>
+                                        <div class="mt16">
+                                            <field name="form_control_style" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- login title and powered by -->
+                        <div class="row mt16 o_settings_container" attrs="{'invisible': [('theme_setting_mode', '!=', 'system')]}">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <div class="content-group">
+                                        <label for="window_default_title" class="o_form_label"/>
+                                        <div class="text-muted">
+                                            Default title
+                                        </div>
+                                        <div class="mt16">
+                                            <field name="window_default_title"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 o_setting_box" attrs="{'invisible': [('theme_setting_mode', '!=', 'system')]}">
+                                    <div class="o_setting_left_pane"/>
+                                    <div class="o_setting_right_pane">
+                                        <div class="content-group">
+                                            <label for="allow_debug" class="o_form_label"/>
+                                            <div class="text-muted">
+                                                Allow Debug
+                                            </div>
+                                            <div class="mt16">
+                                                <field name="allow_debug" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 o_setting_box" attrs="{'invisible': [('theme_setting_mode', '!=', 'system')]}">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <div class="content-group">
+                                        <label for="powered_by" class="o_form_label"/>
+                                        <div class="text-muted">
+                                            Powered By
+                                        </div>
+                                        <div class="mt16">
+                                            <field name="powered_by" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- menu icon policy -->
+                        <div class="row mt16 o_settings_container" attrs="{'invisible': [('theme_setting_mode', '!=', 'system')]}">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <div class="content-group">
+                                        <label for="menu_icon_policy" class="o_form_label"/>
+                                        <div class="text-muted">
+                                            Menu Icon Policy
+                                        </div>
+                                        <div class="mt16">
+                                            <field name="menu_icon_policy"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="awesome_config_settings_action" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_id" ref="anita_res_config_settings_form"/>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+
+    </data>
+</odoo>

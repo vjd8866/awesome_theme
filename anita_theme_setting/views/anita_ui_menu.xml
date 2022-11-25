@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="anita_menu_form" model="ir.ui.view">
+        <field name="name">fuenc.menu_form</field>
+        <field name="model">ir.ui.menu</field>
+        <field name="inherit_id" ref="base.edit_menu_access"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='web_icon_data']" position="relpace" />
+            <xpath expr="//field[@name='web_icon']" position="relpace">
+                <field name="icon_type" />
+                <field name="web_icon" attrs="{'invisible': [('icon_type', '!=', 'web_icon')]}"/>
+                <field name="web_icon_data" attrs="{'invisible': [('icon_type', '!=', 'web_icon')]}"/>
+                <field name="web_icon_priority" attrs="{'invisible': [('icon_type', '!=', 'web_icon')]}"/> 
+                <field name="font_icon" attrs="{'invisible': [('icon_type', '!=', 'font_icon')]}" />
+                <field name="font_icon_priority" attrs="{'invisible': [('icon_type', '!=', 'font_icon')]}" />
+                <field name="svg_icon" attrs="{'invisible': [('icon_type', '!=', 'svg_icon')]}" />
+                <field name="svg_icon_priority" attrs="{'invisible': [('icon_type', '!=', 'svg_icon')]}" />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

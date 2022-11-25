@@ -1,0 +1,42 @@
+
+.settings_tab {
+
+    position: relative;
+    overflow: visible !important;
+    transition: margin-left 0.3s ease-in-out 0s, margin-right 0.3s ease-in-out 0s;
+
+    .anita_setting_toggler {
+        position: absolute;
+        width: 14px;
+        border-left: none;
+        margin-right: -14px;
+        right: 0px;
+        top: calc(50% - 8px);
+        height: 50px;
+        background: #212529;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        color: white;
+        z-index: 1;
+        border: 1px solid #dee2e6;
+        border-left: 1px solid #212529;
+        padding-right: 3px;
+
+        &:hover {
+            path {
+                fill: #fff;
+            }
+        }
+    }
+
+    &.hide {
+        margin-left: -170px;
+    }
+
+    @include media-breakpoint-down(xs) {
+        position: absolute;
+        width: 213px;
+        z-index: 4;
+        box-shadow: 9px -1px 16px #00000049 !important;
+    }
+}

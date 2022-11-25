@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+
+<t t-name="awesome_theme_studio_patch.app_board" t-inherit="awesome_theme_enterprise.app_board" t-inherit-mode="primary" owl="1" t-translation="off">
+    
+    <!-- New App button -->
+    <xpath expr="//div[@class='o_apps']/a[@class='o_app o_menuitem']" position="attributes">
+        <attribute name="t-att-class">{
+            o_focused: appIndex === app_index,
+            o_web_studio_new_app: app.isNewAppButton
+        }</attribute>
+    </xpath>
+    
+    <!-- Edit icons -->
+    <xpath expr="//div[@class='o_apps']/a[@class='o_app o_menuitem']" position="inside">
+        <a t-if="!app.isNewAppButton" class="o_web_studio_edit_icon" t-on-click.stop.prevent="onEditIconClick(app)">
+            <i class="fa fa-pencil-square"/>
+        </a>
+    </xpath>
+</t>
+
+</templates>
